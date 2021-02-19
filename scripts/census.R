@@ -78,7 +78,8 @@ census <- census %>%
       type == "domesticmig" ~ "migration_domestic",
       type == "netmig" ~ "migration_net",
       TRUE ~ type
-    )
+    ),
+    type = factor(type)
   )
 
 # Remove county name for state level data.
