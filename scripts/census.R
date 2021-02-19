@@ -30,7 +30,7 @@ census <- raw %>%
   mutate(
     state_fips = as.integer(state_fips),
     county_fips = as.integer(county_fips),
-    fips = state_fips * 1000 + county_fips,
+    fips = as.integer(state_fips * 1000 + county_fips),
     level = case_when(
       level == "040" ~ "state",
       level == "050" ~ "county"
@@ -67,6 +67,8 @@ census <- census %>%
       !(grepl("^gqestimates", type) | grepl("^(rbirth|rdeath|rnaturalinc|rinternationalmig|rdomesticmig|rnetmig)$", type))
   ) %>%
   mutate(
+    value = as.integer(value),
+    year = as.integer(year),
     type = case_when(
       type == "estimatesbase" ~ "estimate_base",
       type == "popestimate" ~ "estimate",
@@ -89,7 +91,7 @@ census <- census %>%
 
 # Change column order.
 #
-census %>%
+census <- census %>%
   select(
     level,
     region,
