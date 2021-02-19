@@ -1,5 +1,7 @@
 # yankee
 
+<img src="inst/img/yankee.png" width="250" align="right">
+
 yankee: ([demonym](https://en.wikipedia.org/wiki/Demonym)) An American.
 
 ## Data Sources
