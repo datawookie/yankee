@@ -14,7 +14,7 @@ if (!file.exists(NAME_FLAG_PNG)) {
 
 sticker(
   NAME_FLAG_PNG,
-  package = "yankee",
+  package = "{yankee}",
   p_y = 1.6,
   p_size = 20,
   p_color = "#000000",
